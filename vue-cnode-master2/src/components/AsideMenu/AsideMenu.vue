@@ -177,8 +177,8 @@
           margin-top: 150px;
           flex: 1;
           width: 50%;
-          background-color: red;
-          background: url('../../common/icons/icon-cnode.svg') no-repeat;
+          /*background-color: red;*/
+          /*background: url('../../common/icons/icon-cnode.svg') no-repeat;*/
           background-size: contain;
           opacity: .1;
         }

@@ -3,10 +3,10 @@
 
     <div class="tab">
       <div @click="changeTab('all')" :class="{isBorder: tab==='all'}" class="all type"><router-link to="/">Home</router-link></div>
-      <div @click="changeTab('good')" :class="{isBorder: tab==='good'}" class="good type"><router-link to="/">Recommend</router-link></div>
+      <div @click="changeTab('good')" :class="{isBorder: tab==='good'}" class="good type"><router-link to="/">Elite</router-link></div>
       <div @click="changeTab('share')" :class="{isBorder: tab==='share'}" class="share type"><router-link to="/">Share</router-link></div>
       <div @click="changeTab('ask')" :class="{isBorder: tab==='ask'}" class="ask type"><router-link to="/">FAQ</router-link></div>
-      <div @click="changeTab('job')" :class="{isBorder: tab==='job'}" class="job type"><router-link to="/">Employment</router-link></div>
+      <div @click="changeTab('job')" :class="{isBorder: tab==='job'}" class="job type"><router-link to="/">Tech</router-link></div>
     </div>
 
     <div ref="article" @scroll="scroll($event)" class="article">

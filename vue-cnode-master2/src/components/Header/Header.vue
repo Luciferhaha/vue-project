@@ -5,14 +5,14 @@
       <i @click.stop.prevent="showAsideMenu" class="icon-menu"></i>
       <h1 > Sirius </h1>
       <i @click="showMsg" v-show="ak" class="icon-msg"></i>
-      <el-input
-        placeholder="Type something"
-        prefix-icon="el-icon-search"
-        v-model="searchinput" class="search"
-        @keyup="get($event)"
-        @keydown.down.prevent="selectdown"
-        @keydown.up.prevent="selectUp">
-      </el-input>
+      <!--<el-input-->
+        <!--placeholder="Type something"-->
+        <!--prefix-icon="el-icon-search"-->
+        <!--v-model="searchinput" class="search"-->
+        <!--@keyup="get($event)"-->
+        <!--@keydown.down.prevent="selectdown"-->
+        <!--@keydown.up.prevent="selectUp">-->
+      <!--</el-input>-->
       <span v-show="ak" class="msg-count">{{msgCount}}</span>
     </div>
 
@@ -117,16 +117,12 @@ export default {
       border-radius: 10px;
       font-size: 80%;
     }
-    .search{
-      width:300px;
-      left: 130px;
-      top: -40px;
-    }
+
 
     h1 {
-      margin-right: 1100px;
+      /*margin-right: 1100px;*/
       flex: 5;
-      margin-top: 40px;
+      margin-top: 10px;
       letter-spacing: 2px;
       transition: .3s ease-in-out;
 

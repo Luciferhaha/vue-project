@@ -10,13 +10,13 @@
       <br/>
       <br/>
       <p v-show="showTishi">{{tishi}}</p>
-      <input v-model="username" type="text" placeholder="账号">
-      <input v-model="password" type="password" placeholder="密码">
+      <input v-model="username" type="text" placeholder="account">
+      <input v-model="password" type="password" placeholder="password">
       <button @click.stop.prevent="login">Login</button>
-      <span v-on:click="ToRegister">no account? click to resiger</span>
+      <span v-on:click="ToRegister">No account? Click to register</span>
     </div>
     <div class="register-wrap" v-show="showRegister">
-      <h2>Resiger</h2>
+      <h2>Register</h2>
       <br/>
       <br/>
       <p v-show="showTishi">{{tishi}}</p>
@@ -24,9 +24,9 @@
       <input type="text" placeholder="firstname" v-model="firstname">
       <input type="text" placeholder="lastname" v-model="lastname">
       <input type="password" placeholder="password" v-model="newPassword">
-      <button v-on:click="register">resiger</button>
+      <button v-on:click="register">register</button>
       <br>
-      <span v-on:click="ToLogin">already have an account? click to login</span>
+      <span v-on:click="ToLogin">Already have an account? Click to login</span>
     </div>
 
   </div>
@@ -68,8 +68,8 @@
             .then((res)=>{
             console.log(res)
             if(res.data == "ok"){
-              alert(res.data)
-              this.tishi = "注册成功"
+
+              this.tishi = "Register success"
               this.showTishi = true
               this.username = ''
               this.password = ''
@@ -110,7 +110,7 @@
 
               this.showTishi = true
               this.tishi = "登录成功"
-              alert("Login Success")
+
               return res.data
             }
           })
@@ -118,6 +118,7 @@
               console.log('验证失败',error);
             })
             .then(userInfo => {
+              alert("login success!")
               this.$store.commit('updateUserInfo', userInfo);
               this.$store.commit('updateAk', userInfo["id"]);
               localStorage.userInfo = JSON.stringify(userInfo);

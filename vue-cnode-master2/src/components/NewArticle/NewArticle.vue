@@ -48,7 +48,9 @@
 </template>
 
 <script>
-export default {
+
+
+  export default {
   name: 'newArticle',
   data() {
     return {
@@ -110,7 +112,6 @@ export default {
 }
 
 </script>
-
 <style lang="scss" scoped>
   .new-article {
     position: absolute;
