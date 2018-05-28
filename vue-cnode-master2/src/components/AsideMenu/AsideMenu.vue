@@ -91,7 +91,7 @@
     left: 0;
     /*left: 815px;*/
     right: 0;
-    width: 70%;
+    width: 50%;
     height: 100%;
 
     .menu {
