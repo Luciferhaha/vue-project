@@ -231,7 +231,6 @@
     }
   }
 </script>
-
 <style lang="scss" scoped>
 
   .article-detail {

@@ -52,13 +52,18 @@ export default {
   name: 'newArticle',
   data() {
     return {
-      type: 'Share',
+      type: '分享',
       title: '',
-      content: ''
+      content: '',
+      userID:''
     }
   },
+  created() {
+
+    this.userID= this.userIDinit;
+  },
   computed: {
-    ak() {
+    userIDinit() {
       return this.$store.state.ak;
     }
   },
@@ -67,37 +72,43 @@ export default {
       this.$store.commit('showNewArticle', false)
     },
     send() {
-      if (!this.ak) {
+      if (!this.userID) {
         this.$store.commit('showLogin', true);
         return;
       }
-      if (this.type === 'Share') {
+      if (this.type === '分享') {
         this.type = 'share'
-      } else if (this.type === 'Interlocution') {
+      } else if (this.type === '问答') {
         this.type = 'ask';
       } else {
         this.type = 'job';
       }
+      var myDate = new Date();
+      let bloginfo =
+        {
+          title: this.title,
+          content: this.content,
+          user_id: this.userID,
+        }
 
-      this.axios.post('https://cnodejs.org/api/v1/topics', {
-        accesstoken: this.ak,
-        title: this.title,
-        tab: this.type,
-        content: this.content
-      })
+      this.axios.post('http://localhost:8085/test/newtopic', bloginfo)
         .then(result => {
           if (result.data && result.data.success) {
+            alert("publish success")
             this.$store.commit('showNewArticle', false);
             this.$store.commit('showAsideMenu', false);
-            this.$router.push({name: 'article', params: {id: result.data.topic_id}});
+            // this.$router.push({name: 'article', params: {id: result.data.topic_id}});
           } else {
-            alert('You can not release successfully')
+            alert('没有发布成功')
           }
         })
-        .catch((err) => {console.log('err', err);})
+        .catch(
+
+          (err) => {console.log('err', err);})
     }
   }
 }
+
 </script>
 
 <style lang="scss" scoped>

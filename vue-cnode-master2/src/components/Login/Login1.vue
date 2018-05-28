@@ -110,7 +110,7 @@
 
               this.showTishi = true
               this.tishi = "登录成功"
-              alert("登录成功")
+              alert("Login Success")
               return res.data
             }
           })
@@ -118,7 +118,6 @@
               console.log('验证失败',error);
             })
             .then(userInfo => {
-              alert(JSON.stringify(userInfo))
               this.$store.commit('updateUserInfo', userInfo);
               this.$store.commit('updateAk', userInfo["id"]);
               localStorage.userInfo = JSON.stringify(userInfo);
